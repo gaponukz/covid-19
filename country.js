@@ -3,7 +3,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
     .then(data => {
         let active_cases = []
         let st_date = []
-        data[window.location.pathname.split('/')[2]
+        data[window.location.pathname.split('/')[3]
         .replace('%20', ' ').replace('%20', ' ')]
         .forEach(({ date, confirmed, recovered, deaths }) => {
             active_cases.push(confirmed - recovered - deaths)
