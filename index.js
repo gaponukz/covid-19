@@ -19,7 +19,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
     sortable_data.forEach(item => {
         ObjectSorted[item[0]] = item[1]
     })
-    const ctx = document.getElementById('myChart').getContext('2d')
+    const ctx = document.getElementById("myChart").getContext('2d')
 
     const myChart = new Chart(ctx, {
         type: 'bar',

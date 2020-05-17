@@ -4,12 +4,13 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
         let active_cases = []
         let st_date = []
         let value = window.location.hash.substring(1).substring(1)
-        data[value ? value.replace('%20', ' ').replace('%20', ' ') : ""].forEach(({ date, confirmed, recovered, deaths }) => {
+        data[value ? value.replace('%20', ' ').replace('%20', ' ') : ""]
+        .forEach(({ date, confirmed, recovered, deaths }) => {
             active_cases.push(confirmed - recovered - deaths)
             st_date.push(date)
         }
     )
-    const ctx = document.getElementById('countyCanvas').getContext('2d')
+    const ctx = document.getElementById("countyCanvas").getContext('2d')
 
     const myChart = new Chart(ctx, {
         type: 'line',
