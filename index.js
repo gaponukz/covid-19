@@ -1,7 +1,8 @@
+let ctx = document.getElementById("myChart").getContext('2d')
+
 fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
-    let ctx = document.getElementById("myChart").getContext('2d')
 
     if (window.location.hash == "#/") {
         let sortable_data = []
