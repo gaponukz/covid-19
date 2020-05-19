@@ -3,6 +3,7 @@ window.onload = () => {
     .then(response => response.json())
     .then(data => {
         let ctx = document.getElementById("myChart").getContext('2d')
+
         if (window.location.hash == "#/") {
             let sortable_data = []
 
@@ -67,6 +68,7 @@ window.onload = () => {
             })
         }
         else {
+            window.location.reload(true)
             let active_cases = []
             let st_date = []
             let value = window.location.hash.substring(1).substring(1)
