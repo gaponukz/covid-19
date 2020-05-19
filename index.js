@@ -20,8 +20,8 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
         sortable_data.forEach(item => {
             ObjectSorted[item[0]] = item[1]
         })
-        let ctx = document.getElementById("myChart").getContext('2d')
-        const myChart = new Chart(ctx, {
+        
+        const myChart = new Chart(document.getElementById("myChart").getContext('2d'), {
             type: 'bar',
             data: {
                 labels: Object.keys(ObjectSorted).slice(0, 6),
@@ -65,7 +65,6 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
         })
     }
     else {
-        let ctx = document.getElementById("myChart").getContext('2d')
         let active_cases = []
         let st_date = []
         let value = window.location.hash.substring(1).substring(1)
@@ -75,7 +74,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
             st_date.push(date)
         }
     )
-        const myChart = new Chart(ctx, {
+        const myChart = new Chart(document.getElementById("myChart").getContext('2d'), {
             type: 'line',
             data: {
                 labels: st_date,
