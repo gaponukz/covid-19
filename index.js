@@ -1,8 +1,7 @@
-let ctx = document.getElementById("myChart").getContext('2d')
-
 fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
+    let ctx = document.getElementById("myChart").getContext('2d')
 
     if (window.location.hash == "#/") {
         let sortable_data = []
@@ -68,6 +67,7 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
         })
     }
     else {
+        let ctx = document.getElementById("myChart").getContext('2d')
         let active_cases = []
         let st_date = []
         let value = window.location.hash.substring(1).substring(1)
