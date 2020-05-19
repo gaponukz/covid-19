@@ -22,7 +22,7 @@ window.onload = () => {
             sortable_data.forEach(item => {
                 ObjectSorted[item[0]] = item[1]
             })
-            
+
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -30,9 +30,11 @@ window.onload = () => {
                     datasets: [{
                         label: '# of Patients',
                         data: [...Array(6).keys()].map(item => {
+                            return (
                             ObjectSorted[Object.keys(ObjectSorted)[item]][0]
                             - ObjectSorted[Object.keys(ObjectSorted)[item]][1]
                             - ObjectSorted[Object.keys(ObjectSorted)[item]][2]
+                            )
                         }),
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
